@@ -6,8 +6,6 @@ const route = require('./routes/routes.js')
 
 const app = express();
 
-const { base64ImagesToPDF } = require('./generatepdf');
-
 app.use(bodyParser.json({ limit: '50mb' })); // to handle large base64 inputs
 app.use(cors()); // Enable CORS for all routes
 

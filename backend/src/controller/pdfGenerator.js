@@ -50,7 +50,7 @@ const createPdf = async (req, res) => {
         return res.status(400).send('Invalid input');
     }
 
-    const pdfFolder = path.join(__dirname, 'pdfs');
+    const pdfFolder = path.join(__dirname, '../pdfs');
     if (!fs.existsSync(pdfFolder)) {
         fs.mkdirSync(pdfFolder);
     }
@@ -121,4 +121,18 @@ const downloadPdf = async (req, res) => {
     // });
 };
 
-module.exports = { createPdf, generatePdf, downloadPdf};
+const clearPdf = async (req, res) => {
+    const folder = "../pdfs";
+    const folderPath = path.join(__dirname, folder);
+    fs.rm(folderPath, { recursive: true, force: true }, (err) => {
+        if (err) {
+            console.error('Error deleting folder:', err);
+            res.status(500).json({ msg: "Can't delete folder" });
+        } else {
+            console.log('Folder deleted:', folderPath);
+            res.json({ msg: "Folder deleted successfully" });
+        }
+    });
+};
+
+module.exports = { createPdf, generatePdf, downloadPdf, clearPdf };

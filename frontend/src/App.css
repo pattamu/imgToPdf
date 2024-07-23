@@ -1,0 +1,71 @@
+/* Styles for the container */
+.container {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    gap: 10px; /* Add space between items */
+    padding: 20px; /* Add padding around the container */
+}
+
+/* Styles for the input field */
+.input-field {
+    padding: 10px;
+    margin-bottom: 10px; /* Space below the input field */
+    width: 100%; /* Full width */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Styles for the button container */
+.button-container {
+    display: flex; /* Align items in a row */
+    gap: 10px; /* Space between buttons */
+}
+
+/* Styles for buttons */
+button {
+    padding: 10px 20px; /* Add padding inside the button */
+    margin: 5px 0; /* Space between buttons */
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff; /* Blue background */
+    color: white; /* White text */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+button:disabled {
+    background-color: #ccc; /* Gray background for disabled state */
+    cursor: not-allowed; /* Default cursor for disabled state */
+}
+
+
+/* Styles for the larger input field */
+.large-input {
+    width: 100%;
+    height: 100px; 
+    font-size: 16px; 
+    padding: 10px;
+    box-sizing: border-box; 
+}
+
+/* Styles for the list container */
+.truncated-list {
+    max-width: 300px; /* Adjust the width of the list container as needed */
+    list-style-position: inside; /* Ensure numbers are inside the list item box */
+    padding-left: 0; /* Remove default padding */
+}
+
+/* Styles for the list items */
+.truncated-list-item {
+    white-space: nowrap; /* Prevent text from wrapping to the next line */
+    overflow: hidden; /* Hide text that overflows */
+    text-overflow: ellipsis; /* Add "..." at the end of overflowed text */
+    display: list-item; /* Ensure list item display is proper */
+    margin-bottom: 8px; /* Optional: Space between list items */
+    line-height: 1.5; /* Optional: Line height for better readability */
+}
+
+
